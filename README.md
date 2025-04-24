@@ -81,6 +81,3 @@ git merge nome-da-branch
 ```
 Aplica as alterações da branch na branch principal.
 
----
-
-Se quiser, posso montar um **guia rápido em PDF** ou um **resumo visual** com isso tudo também. Quer?

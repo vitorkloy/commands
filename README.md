@@ -158,9 +158,8 @@ node_modules/
 ---
 
 💡 **Dica**: Sempre verifique `git status` antes e depois de operações para entender o estado do seu repositório!
-```
 
-Este README inclui:
+### Este README inclui:
 1. Todos os comandos básicos
 2. Fluxo de trabalho com branches
 3. Soluções para erros comuns (especialmente relacionados a commit/push)

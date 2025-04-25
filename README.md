@@ -141,6 +141,28 @@ git blame nome-do-arquivo  # Mostra quem editou cada linha
 
 ---
 
+## 🧠 **Comandos Avançados Úteis**
+
+### 🕵️ **Encontrar bugs**
+```bash
+git bisect start                    # Inicia busca binária
+git bisect bad                      # Marca commit atual como ruim
+git bisect good <hash-old-commit>   # Marca commit antigo como bom
+```
+
+### 🏷️ **Versionamento**
+```bash
+git tag -a v1.0.0 -m "Versão estável"
+git push origin v1.0.0
+```
+
+### 🗂️ **Reescrever histórico (cuidado!)**
+```bash
+git rebase -i HEAD~3  # Edita últimos 3 commits
+```
+
+---
+
 ## ⚙️ **Configurações Úteis**
 
 ### 👤 **Configurar usuário**

@@ -1,8 +1,7 @@
-```markdown
 # Git Commands Guide 🚀
 
 Comandos essenciais do Git e soluções para erros comuns que podem aparecer ao fazer `commit` ou outras operações:
-```
+
 ---
 
 ## 🔧 **Comandos Básicos**

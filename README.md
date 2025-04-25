@@ -1,10 +1,8 @@
-Aqui está um `README.md` completo com os comandos Git essenciais, incluindo soluções para erros comuns que podem aparecer ao fazer `commit` ou outras operações:
-
 ```markdown
 # Git Commands Guide 🚀
 
-Comandos essenciais do Git e soluções para erros comuns.
-
+Comandos essenciais do Git e soluções para erros comuns que podem aparecer ao fazer `commit` ou outras operações:
+```
 ---
 
 ## 🔧 **Comandos Básicos**

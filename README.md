@@ -1,189 +1,107 @@
 # Git Commands Guide 🚀
 
-Comandos essenciais do Git e soluções para erros comuns que podem aparecer ao fazer `commit` ou outras operações:
-
-#### Este README inclui:
-1. Todos os comandos básicos
-2. Fluxo de trabalho com branches
-3. Soluções para erros comuns (especialmente relacionados a commit/push)
-4. Comandos úteis para histórico e configuração
-5. Dicas para evitar problemas
-   
----
-
-## 🔧 **Comandos Básicos**
-
-### 📦 **1. Inicializar um repositório**
-```bash
-git init
-```
-
-### 📁 **2. Clonar um repositório**
-```bash
-git clone https://github.com/usuario/repositorio.git
-```
-
-### ✅ **3. Verificar status**
-```bash
-git status
-```
-
-### ➕ **4. Adicionar arquivos**
-```bash
-git add nome-do-arquivo  # Arquivo específico
-git add .                # Todos os arquivos
-git add -A               # Todos os arquivos (incluindo deletados)
-```
-
-### 💾 **5. Fazer commit**
-```bash
-git commit -m "mensagem descritiva"
-```
-
-### 🔗 **6. Conectar ao repositório remoto**
-```bash
-git remote add origin https://github.com/usuario/repositorio.git
-```
-
-### 📤 **7. Enviar para o repositório remoto**
-```bash
-git push -u origin main  # Primeiro push
-git push                 # Pushes seguintes
-```
-
-### 🔄 **8. Atualizar do repositório remoto**
-```bash
-git pull origin main
-```
+Comandos do Git, organizados por categoria, para utilizar com o GitHub. Esta lista inclui comandos desde os mais básicos até os mais avançados, cobrindo diversas funcionalidades do Git.
 
 ---
 
-## 🌿 **Branching & Merging**
+## 🛠️ Configuração Inicial
 
-### 🌳 **9. Criar e mudar para nova branch**
-```bash
-git checkout -b nome-da-branch
-```
-
-### 🔀 **10. Alternar entre branches**
-```bash
-git checkout nome-da-branch
-```
-
-### 🔁 **11. Merge (juntar branches)**
-```bash
-git checkout main
-git merge nome-da-branch
-```
-
-### 🗑️ **12. Deletar branch**
-```bash
-git branch -d nome-da-branch      # Deleta local
-git push origin --delete nome-da-branch  # Deleta remoto
-```
+* `git config --global user.name "Seu Nome"`: Define o nome do usuário.
+* `git config --global user.email "seu@email.com"`: Define o e-mail do usuário.
+* `git config --global core.editor "nome_do_editor"`: Define o editor padrão (por exemplo, `vim`, `nano`).
+* `git config --list`: Lista todas as configurações atuais.
 
 ---
 
-## ⚠️ **Soluções para Erros Comuns**
+## 📁 Iniciando e Clonando Repositórios
 
-### 🔄 **Erro ao fazer push (divergência de branches)**
-```bash
-git pull --rebase origin main
-git push origin main
-```
-
-### ✏️ **Corrigir último commit (mensagem ou arquivos)**
-```bash
-git add .                        # Adiciona arquivos esquecidos
-git commit --amend -m "nova mensagem"
-git push --force origin main     # Cuidado: força push
-```
-
-### 🔍 **Desfazer commit local (mantendo alterações)**
-```bash
-git reset --soft HEAD~1
-```
-
-### ⏪ **Desfazer commit local (perdendo alterações)**
-```bash
-git reset --hard HEAD~1
-```
-
-### 🗄️ **Recuperar arquivos deletados**
-```bash
-git checkout HEAD -- nome-do-arquivo
-```
-
-### 🔀 **Resolver conflitos de merge**
-1. Abra os arquivos com conflitos (<<<<<<< HEAD)
-2. Edite para manter as versões corretas
-3. Depois de resolver:
-```bash
-git add .
-git commit -m "resolve merge conflicts"
-```
+* `git init`: Inicializa um novo repositório Git local.
+* `git clone https://github.com/usuario/repositorio.git`: Clona um repositório remoto existente.
 
 ---
 
-## 📜 **Histórico & Logs**
+## 📄 Trabalhando com Arquivos
 
-### 📋 **Ver histórico de commits**
-```bash
-git log
-git log --oneline          # Versão compacta
-git log --graph --oneline  # Com visualização de branches
-```
-
-### 🔎 **Buscar alterações em arquivos**
-```bash
-git blame nome-do-arquivo  # Mostra quem editou cada linha
-```
+* `git status`: Mostra o status dos arquivos no diretório de trabalho e na área de stage.
+* `git add arquivo.txt`: Adiciona um arquivo específico à área de stage.
+* `git add .`: Adiciona todos os arquivos modificados à área de stage.
+* `git commit -m "Mensagem do commit"`: Salva as alterações adicionadas com uma mensagem descritiva.
+* `git commit --amend`: Modifica o último commit.
+* `git rm arquivo.txt`: Remove um arquivo do repositório e do sistema de arquivos.
+* `git mv arquivo_antigo.txt novo_arquivo.txt`: Renomeia ou move um arquivo.([atlassian.com][1])
 
 ---
 
-## 🧠 **Comandos Avançados Úteis**
+## 🔄 Sincronização com Repositórios Remotos
 
-### 🕵️ **Encontrar bugs**
-```bash
-git bisect start                    # Inicia busca binária
-git bisect bad                      # Marca commit atual como ruim
-git bisect good <hash-old-commit>   # Marca commit antigo como bom
-```
-
-### 🏷️ **Versionamento**
-```bash
-git tag -a v1.0.0 -m "Versão estável"
-git push origin v1.0.0
-```
-
-### 🗂️ **Reescrever histórico (cuidado!)**
-```bash
-git rebase -i HEAD~3  # Edita últimos 3 commits
-```
+* `git remote add origin https://github.com/usuario/repositorio.git`: Adiciona um repositório remoto.
+* `git push -u origin main`: Envia as alterações para o repositório remoto na branch principal.
+* `git pull origin main`: Atualiza o repositório local com as alterações do remoto.
+* `git fetch`: Baixa as alterações do repositório remoto sem mesclá-las automaticamente.
 
 ---
 
-## ⚙️ **Configurações Úteis**
+## 🌿 Gerenciamento de Branches
 
-### 👤 **Configurar usuário**
-```bash
-git config --global user.name "Seu Nome"
-git config --global user.email "seu@email.com"
-```
-
-### 🔑 **Salvar credenciais (evitar pedir senha sempre)**
-```bash
-git config --global credential.helper store
-```
-
-### 🛠️ **Ignorar arquivos (`.gitignore`)**
-Crie um arquivo `.gitignore` na raiz do projeto com:
-```
-node_modules/
-.env
-*.log
-```
+* `git branch`: Lista todas as branches locais.
+* `git branch nome-da-branch`: Cria uma nova branch.
+* `git checkout nome-da-branch`: Muda para a branch especificada.
+* `git checkout -b nova-branch`: Cria e muda para uma nova branch.
+* `git merge nome-da-branch`: Mescla a branch especificada na branch atual.
+* `git branch -d nome-da-branch`: Exclui uma branch local.
+* `git push origin --delete nome-da-branch`: Exclui uma branch no repositório remoto.([loginradius.com][2], [github.com][3])
 
 ---
 
-💡 **Dica**: Sempre verifique `git status` antes e depois de operações para entender o estado do seu repositório!
+## 🕵️‍♂️ Visualização e Histórico
+
+* `git log`: Exibe o histórico de commits.
+* `git log --oneline`: Exibe o histórico de commits em uma linha por commit.
+* `git diff`: Mostra as diferenças entre os arquivos modificados e o último commit.
+* `git show`: Mostra detalhes sobre um objeto Git (como um commit).([education.github.com][4])
+
+---
+
+## 🧪 Stash e Recuperação de Alterações
+
+* `git stash`: Salva temporariamente as alterações não commitadas.
+* `git stash list`: Lista os stashes salvos.
+* `git stash apply`: Aplica o último stash salvo.
+* `git stash drop`: Remove o último stash salvo.
+* `git stash clear`: Remove todos os stashes salvos.
+
+---
+
+## 🧹 Limpeza e Reset
+
+* `git clean -f`: Remove arquivos não rastreados do diretório de trabalho.
+* `git reset arquivo.txt`: Remove um arquivo da área de stage.
+* `git reset --soft HEAD~1`: Desfaz o último commit, mantendo as alterações na área de stage.
+* `git reset --hard HEAD~1`: Desfaz o último commit e descarta as alterações.
+
+---
+
+## 🏷️ Tags
+
+* `git tag`: Lista todas as tags.
+* `git tag -a v1.0 -m "Versão 1.0"`: Cria uma tag anotada.
+* `git push origin v1.0`: Envia a tag para o repositório remoto.
+* `git tag -d v1.0`: Exclui uma tag local.
+* `git push origin --delete v1.0`: Exclui uma tag no repositório remoto.([github.com][3])
+
+---
+
+## 🔍 Outras Ferramentas Úteis
+
+* `git blame arquivo.txt`: Mostra quem modificou cada linha de um arquivo.
+* `git reflog`: Exibe o histórico de referências (como mudanças de HEAD).
+* `git cherry-pick hash_do_commit`: Aplica um commit específico em outra branch.
+* `git bisect`: Auxilia na identificação de commits que introduziram bugs.([atlassian.com][1], [learn.microsoft.com][5])
+
+---
+
+## 📚 Recursos Adicionais
+
+* [Documentação Oficial do Git](https://git-scm.com/docs)
+* [GitHub Education - Git Cheat Sheet (PDF)](https://education.github.com/git-cheat-sheet-education.pdf)
+* [Git Reference](https://git.github.io/git-reference/)

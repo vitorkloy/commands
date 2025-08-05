@@ -4,6 +4,13 @@ Comandos do Git, organizados por categoria, para utilizar com o GitHub. Esta lis
 
 ---
 
+## Commit Padrão
+* `git add .`
+* `git status`
+* `git commit -m "Mensagem"`
+* `git push -u origin main`
+
+
 ## 🛠️ Configuração Inicial
 
 * `git config --global user.name "Seu Nome"`: Define o nome do usuário.

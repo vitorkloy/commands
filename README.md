@@ -10,6 +10,7 @@ Comandos do Git, organizados por categoria, para utilizar com o GitHub. Esta lis
 * `git commit -m "Mensagem"`
 * `git push -u origin main`
 
+---
 
 ## 🛠️ Configuração Inicial
 

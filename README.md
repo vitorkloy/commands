@@ -5,10 +5,18 @@ Comandos do Git, organizados por categoria, para utilizar com o GitHub. Esta lis
 ---
 
 ## Commit Padrão
-* `git add .`
-* `git status`
-* `git commit -m "Mensagem"`
-* `git push -u origin main`
+```bash
+git add .
+```
+```bash
+git status
+```
+```bash
+git commit -m "Mensagem"
+```
+```bash
+git push -u origin main
+```
 
 ---
 

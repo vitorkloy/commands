@@ -1,52 +1,6 @@
-````markdown
 #  Guia Completo de Git e Conventional Commits
----
 
-## 📘 Sumário
 
-1. [O que são Conventional Commits](#-o-que-são-conventional-commits)
-2. [Git Commands Guide](#-git-commands-guide)
-   - [Commit Padrão](#-commit-padrão)
-   - [Configuração Inicial](#️-configuração-inicial)
-   - [Iniciando e Clonando Repositórios](#-iniciando-e-clonando-repositórios)
-   - [Trabalhando com Arquivos](#-trabalhando-com-arquivos)
-   - [Sincronização com Repositórios Remotos](#-sincronização-com-repositórios-remotos)
-   - [Arquivo .gitignore](#-arquivo-gitignore)
-   - [Gerenciamento de Branches](#-gerenciamento-de-branches)
-   - [Visualização e Histórico](#-visualização-e-histórico)
-   - [Stash e Recuperação](#-stash-e-recuperação)
-   - [Limpeza e Reset](#-limpeza-e-reset)
-   - [Merge e Rebase](#-merge-e-rebase)
-   - [Tags](#-tags)
-   - [Debug e Diagnóstico](#-debug-e-diagnóstico)
-   - [Patch e Fluxos Alternativos](#-patch-e-fluxos-alternativos)
-   - [Ferramentas Adicionais](#-ferramentas-adicionais)
-3. [Recursos Recomendados](#-recursos-recomendados)
-
----
-
-## 1. O que são Conventional Commits?
-
-O **Conventional Commits** é uma convenção para padronizar mensagens de commit, tornando o histórico de alterações **mais legível, automatizável e colaborativo**.  
-Cada commit segue uma estrutura descritiva:  
-
-```bash
-<tipo>: <descrição breve>
-````
-
-### Tipos mais utilizados:
-
-| Tipo         | Descrição                                    | Exemplo                                         |
-| ------------ | -------------------------------------------- | ----------------------------------------------- |
-| **feat**     | Adição de um novo recurso ou funcionalidade. | `feat: adicionar tela de login`                 |
-| **fix**      | Correção de um bug.                          | `fix: corrigir erro de autenticação`            |
-| **docs**     | Alterações na documentação.                  | `docs: atualizar README com instruções`         |
-| **style**    | Mudanças de estilo que não afetam o código.  | `style: ajustar indentação e espaçamento`       |
-| **refactor** | Refatoração sem mudança de funcionalidade.   | `refactor: otimizar função de carregamento`     |
-| **test**     | Adição ou ajuste de testes automatizados.    | `test: adicionar testes para componente Header` |
-| **chore**    | Tarefas gerais de manutenção.                | `chore: atualizar dependências do projeto`      |
-
----
 
 ## 2. Git Commands Guide
 
@@ -68,6 +22,18 @@ git commit -m "Mensagem"
 ```bash
 git push -u origin main
 ```
+
+#### Tipos mais utilizados de commit:
+
+| Tipo         | Descrição                                    | Exemplo                                         |
+| ------------ | -------------------------------------------- | ----------------------------------------------- |
+| **feat**     | Adição de um novo recurso ou funcionalidade. | `feat: adicionar tela de login`                 |
+| **fix**      | Correção de um bug.                          | `fix: corrigir erro de autenticação`            |
+| **docs**     | Alterações na documentação.                  | `docs: atualizar README com instruções`         |
+| **style**    | Mudanças de estilo que não afetam o código.  | `style: ajustar indentação e espaçamento`       |
+| **refactor** | Refatoração sem mudança de funcionalidade.   | `refactor: otimizar função de carregamento`     |
+| **test**     | Adição ou ajuste de testes automatizados.    | `test: adicionar testes para componente Header` |
+| **chore**    | Tarefas gerais de manutenção.                | `chore: atualizar dependências do projeto`      |
 
 ---
 

@@ -1,10 +1,61 @@
-# Git Commands Guide 🚀
+````markdown
+#  Guia Completo de Git e Conventional Commits
+---
 
-Comandos do Git, organizados por categoria, para utilizar com o GitHub. Esta lista inclui comandos desde os mais básicos até os mais avançados, cobrindo diversas funcionalidades do Git.
+## 📘 Sumário
+
+1. [O que são Conventional Commits](#-o-que-são-conventional-commits)
+2. [Git Commands Guide](#-git-commands-guide)
+   - [Commit Padrão](#-commit-padrão)
+   - [Configuração Inicial](#️-configuração-inicial)
+   - [Iniciando e Clonando Repositórios](#-iniciando-e-clonando-repositórios)
+   - [Trabalhando com Arquivos](#-trabalhando-com-arquivos)
+   - [Sincronização com Repositórios Remotos](#-sincronização-com-repositórios-remotos)
+   - [Arquivo .gitignore](#-arquivo-gitignore)
+   - [Gerenciamento de Branches](#-gerenciamento-de-branches)
+   - [Visualização e Histórico](#-visualização-e-histórico)
+   - [Stash e Recuperação](#-stash-e-recuperação)
+   - [Limpeza e Reset](#-limpeza-e-reset)
+   - [Merge e Rebase](#-merge-e-rebase)
+   - [Tags](#-tags)
+   - [Debug e Diagnóstico](#-debug-e-diagnóstico)
+   - [Patch e Fluxos Alternativos](#-patch-e-fluxos-alternativos)
+   - [Ferramentas Adicionais](#-ferramentas-adicionais)
+3. [Recursos Recomendados](#-recursos-recomendados)
 
 ---
 
-## Commit Padrão
+## 1. O que são Conventional Commits?
+
+O **Conventional Commits** é uma convenção para padronizar mensagens de commit, tornando o histórico de alterações **mais legível, automatizável e colaborativo**.  
+Cada commit segue uma estrutura descritiva:  
+
+```bash
+<tipo>: <descrição breve>
+````
+
+### Tipos mais utilizados:
+
+| Tipo         | Descrição                                    | Exemplo                                         |
+| ------------ | -------------------------------------------- | ----------------------------------------------- |
+| **feat**     | Adição de um novo recurso ou funcionalidade. | `feat: adicionar tela de login`                 |
+| **fix**      | Correção de um bug.                          | `fix: corrigir erro de autenticação`            |
+| **docs**     | Alterações na documentação.                  | `docs: atualizar README com instruções`         |
+| **style**    | Mudanças de estilo que não afetam o código.  | `style: ajustar indentação e espaçamento`       |
+| **refactor** | Refatoração sem mudança de funcionalidade.   | `refactor: otimizar função de carregamento`     |
+| **test**     | Adição ou ajuste de testes automatizados.    | `test: adicionar testes para componente Header` |
+| **chore**    | Tarefas gerais de manutenção.                | `chore: atualizar dependências do projeto`      |
+
+---
+
+## 2. Git Commands Guide
+
+A seguir, um guia abrangente de comandos Git, organizados por categoria — do básico ao avançado — para uso no terminal ou integrado a plataformas como o **GitHub**.
+
+---
+
+###  Commit Padrão
+
 ```bash
 git add .
 ```
@@ -22,66 +73,60 @@ git push -u origin main
 
 ## 🛠️ Configuração Inicial
 
-* `git config --global user.name "Seu Nome"`: Define o nome do usuário.
-* `git config --global user.email "seu@email.com"`: Define o e-mail do usuário.
-* `git config --global core.editor "nome_do_editor"`: Define o editor padrão (por exemplo, `vim`, `nano`).
-* `git config --list`: Lista todas as configurações atuais.
+* `git config --global user.name "Seu Nome"` — Define o nome do usuário.
+* `git config --global user.email "seu@email.com"` — Define o e-mail do usuário.
+* `git config --global core.editor "nome_do_editor"` — Define o editor padrão (`vim`, `nano`, etc).
+* `git config --list` — Lista todas as configurações atuais.
 
 ---
 
 ## 📁 Iniciando e Clonando Repositórios
 
-* `git init`: Inicializa um novo repositório Git local.
-* `git clone https://github.com/usuario/repositorio.git`: Clona um repositório remoto existente.
+* `git init` — Inicializa um novo repositório Git local.
+* `git clone https://github.com/usuario/repositorio.git` — Clona um repositório remoto existente.
 
 ---
 
 ## 📄 Trabalhando com Arquivos
 
-* `git status`: Mostra o status dos arquivos no diretório de trabalho e na área de stage.
-* `git add arquivo.txt`: Adiciona um arquivo específico à área de stage.
-* `git add .`: Adiciona todos os arquivos modificados à área de stage.
-* `git commit -m "Mensagem do commit"`: Salva as alterações adicionadas com uma mensagem descritiva.
-* `git commit --amend`: Modifica o último commit.
-* `git rm arquivo.txt`: Remove um arquivo do repositório e do sistema de arquivos.
-* `git mv arquivo_antigo.txt novo_arquivo.txt`: Renomeia ou move um arquivo.
+* `git status` — Mostra o status dos arquivos no diretório de trabalho.
+* `git add arquivo.txt` — Adiciona um arquivo específico à área de stage.
+* `git add .` — Adiciona todos os arquivos modificados.
+* `git commit -m "Mensagem"` — Cria um commit com mensagem descritiva.
+* `git commit --amend` — Modifica o último commit.
+* `git rm arquivo.txt` — Remove um arquivo do repositório.
+* `git mv arquivo_antigo.txt novo_arquivo.txt` — Renomeia ou move um arquivo.
 
 ---
 
 ## 🔄 Sincronização com Repositórios Remotos
 
-* `git remote -v`: Verifica em qual repositório remoto está.
-* `git remote add origin https://github.com/usuario/repositorio.git`: Adiciona um repositório remoto.
-* `git push -u origin main`: Envia as alterações para o repositório remoto na branch principal.
-* `git pull origin main`: Atualiza o repositório local com as alterações do remoto.
-* `git push --force` ou `git push --force-with-lease`: Força push para repositório remoto (útil após rebase, mas use com cuidado).
-* `git fetch`: Baixa as alterações do repositório remoto sem mesclá-las automaticamente.
-* `git remote prune origin`: Remove referências de branches remotas que não existem mais.
+* `git remote -v` — Verifica o repositório remoto configurado.
+* `git remote add origin https://github.com/usuario/repositorio.git` — Define o repositório remoto.
+* `git push -u origin main` — Envia alterações para o remoto.
+* `git pull origin main` — Atualiza o repositório local.
+* `git push --force` — Força envio de alterações (use com cautela).
+* `git fetch` — Baixa alterações do remoto sem mesclar.
+* `git remote prune origin` — Remove branches remotas inexistentes.
 
 ---
 
-## 📌 Arquivo .gitignore
+## 📌 Arquivo `.gitignore`
 
-Padrões úteis para o arquivo `.gitignore`:
-- `*.[extensão]` - Ignora todos os arquivos com determinada extensão (ex: `*.log`)
-- `pasta/` - Ignora toda a pasta e seu conteúdo
-- `!arquivo.txt` - Exceção (não ignora este arquivo específico)
-- `# Comentário` - Linhas começando com `#` são ignoradas (comentários)
+Ignora arquivos ou pastas que não devem ser versionados.
 
-**Exemplo de arquivo .gitignore:**
+**Exemplo de `.gitignore`:**
+
 ```text
-# Ignora arquivos de sistema
+# Arquivos de sistema
 .DS_Store
 Thumbs.db
 
-# Ignora dependências
+# Dependências
 node_modules/
 vendor/
 
-# Exceto um arquivo específico na pasta ignorada
-!vendor/important.lib
-
-# Ignora arquivos de ambiente mas permite exemplo
+# Arquivos de ambiente
 .env
 !.env.example
 ```
@@ -90,92 +135,90 @@ vendor/
 
 ## 🌿 Gerenciamento de Branches
 
-* `git branch -a`: Mostra todas as branches (locais e remotas).
-* `git branch`: Lista todas as branches locais.
-* `git branch nome-da-branch`: Cria uma nova branch.
-* `git branch -m nome-antigo nome-novo`: Renomeia uma branch local.
-* `git checkout nome-da-branch`: Muda para a branch especificada.
-* `git checkout -b nova-branch`: Cria e muda para uma nova branch.
-* `git checkout --track origin/nome-da-branch`: Cria branch local para rastrear branch remota.
-* `git merge nome-da-branch`: Mescla a branch especificada na branch atual.
-* `git branch -d nome-da-branch`: Exclui uma branch local.
-* `git push origin --delete nome-da-branch`: Exclui uma branch no repositório remoto.
+* `git branch` — Lista branches locais.
+* `git branch -a` — Lista todas as branches (locais e remotas).
+* `git branch nome-da-branch` — Cria uma nova branch.
+* `git checkout nome-da-branch` — Troca de branch.
+* `git checkout -b nova-branch` — Cria e entra em uma nova branch.
+* `git merge nome-da-branch` — Mescla uma branch na atual.
+* `git branch -d nome-da-branch` — Exclui uma branch local.
+* `git push origin --delete nome-da-branch` — Exclui branch remota.
 
 ---
 
-## 🕵️‍♂️ Visualização e Histórico
+## 🕵️ Visualização e Histórico
 
-* `git log`: Exibe o histórico de commits.
-* `git log --oneline`: Exibe o histórico de commits em uma linha por commit.
-* `git log --graph --oneline --all`: Mostra histórico com gráfico ASCII.
-* `git log -p arquivo.txt`: Mostra histórico de alterações para um arquivo específico.
-* `git shortlog`: Resume o histórico de commits por autor.
-* `git diff`: Mostra as diferenças entre os arquivos modificados e o último commit.
-* `git show`: Mostra detalhes sobre um objeto Git (como um commit).
+* `git log` — Exibe o histórico completo.
+* `git log --oneline` — Histórico resumido.
+* `git log --graph --oneline --all` — Histórico em forma de gráfico.
+* `git diff` — Mostra as diferenças entre commits.
+* `git show` — Exibe detalhes de um commit específico.
+
 ---
 
-## 🧪 Stash e Recuperação de Alterações
+## 🧪 Stash e Recuperação
 
-* `git stash`: Salva temporariamente as alterações não commitadas.
-* `git stash list`: Lista os stashes salvos.
-* `git stash apply`: Aplica o último stash salvo.
-* `git stash drop`: Remove o último stash salvo.
-* `git stash clear`: Remove todos os stashes salvos.
+* `git stash` — Guarda temporariamente alterações não commitadas.
+* `git stash list` — Lista stashes salvos.
+* `git stash apply` — Aplica o stash mais recente.
+* `git stash drop` — Remove o último stash.
+* `git stash clear` — Limpa todos os stashes.
 
 ---
 
 ## 🧹 Limpeza e Reset
 
-* `git clean -f`: Remove arquivos não rastreados do diretório de trabalho.
-* `git reset arquivo.txt`: Remove um arquivo da área de stage.
-* `git reset --soft HEAD~1`: Desfaz o último commit, mantendo as alterações na área de stage.
-* `git reset --hard HEAD~1`: Desfaz o último commit e descarta as alterações.
+* `git clean -f` — Remove arquivos não rastreados.
+* `git reset arquivo.txt` — Remove um arquivo da área de stage.
+* `git reset --soft HEAD~1` — Desfaz o último commit mantendo as alterações.
+* `git reset --hard HEAD~1` — Desfaz completamente o último commit.
 
 ---
 
-## � Merge e Rebase
-* `git rebase nome-da-branch`: Reaplica commits da branch atual sobre outra branch.
-* `git merge --abort`: Aborta um merge em conflito.
-* `git rebase --abort`: Aborta um rebase em andamento.
+## 🔁 Merge e Rebase
+
+* `git merge nome-da-branch` — Junta o histórico de outra branch.
+* `git rebase nome-da-branch` — Reaplica commits sobre outra base.
+* `git merge --abort` — Cancela um merge em conflito.
+* `git rebase --abort` — Cancela um rebase em andamento.
 
 ---
 
 ## 🏷️ Tags
 
-* `git tag`: Lista todas as tags.
-* `git tag -l "v1.*"`: Lista tags com padrão específico.
-* `git tag -a v1.0 -m "Versão 1.0"`: Cria uma tag anotada.
-* `git push origin v1.0`: Envia a tag para o repositório remoto.
-* `git tag -d v1.0`: Exclui uma tag local.
-* `git checkout tags/v1.0`: Verifica o código em um estado específico de tag.
-* `git push origin --delete v1.0`: Exclui uma tag no repositório remoto.
+* `git tag` — Lista tags existentes.
+* `git tag -a v1.0 -m "Versão 1.0"` — Cria uma tag anotada.
+* `git push origin v1.0` — Envia a tag para o remoto.
+* `git tag -d v1.0` — Remove uma tag local.
+* `git push origin --delete v1.0` — Remove tag remota.
 
 ---
 
-## 🧩 Comandos de Debug
+## 🧩 Debug e Diagnóstico
 
-* `git fsck`: Verifica a integridade do banco de dados Git.
-* `git gc`: Otimiza o repositório (garbage collection).
+* `git fsck` — Verifica integridade do repositório.
+* `git gc` — Otimiza o repositório (garbage collection).
+* `git reflog` — Mostra histórico de movimentos do HEAD.
+* `git bisect` — Localiza commits que introduziram bugs.
 
 ---
 
 ## 📦 Patch e Fluxos Alternativos
 
-* `git format-patch`: Cria arquivos de patch a partir de commits.
-* `git apply patch-file`: Aplica um arquivo de patch.
+* `git format-patch` — Gera arquivos de patch a partir de commits.
+* `git apply patch-file` — Aplica um arquivo de patch.
 
 ---
 
-## 🔍 Outras Ferramentas Úteis
+## 🔍 Ferramentas Adicionais
 
-* `git blame arquivo.txt`: Mostra quem modificou cada linha de um arquivo.
-* `git reflog`: Exibe o histórico de referências (como mudanças de HEAD).
-* `git cherry-pick hash_do_commit`: Aplica um commit específico em outra branch.
-* `git bisect`: Auxilia na identificação de commits que introduziram bugs.
+* `git blame arquivo.txt` — Mostra quem editou cada linha.
+* `git shortlog` — Resumo do histórico de commits por autor.
+* `git cherry-pick hash` — Aplica um commit específico em outra branch.
 
 ---
 
-## 📚 Recursos Adicionais
+## 📚 Recursos Recomendados
 
 * [Documentação Oficial do Git](https://git-scm.com/docs)
 * [GitHub Education - Git Cheat Sheet (PDF)](https://education.github.com/git-cheat-sheet-education.pdf)

@@ -2,7 +2,7 @@
 
 
 
-## 2. Git Commands Guide
+## Git Commands Guide
 
 A seguir, um guia abrangente de comandos Git, organizados por categoria — do básico ao avançado — para uso no terminal ou integrado a plataformas como o **GitHub**.
 

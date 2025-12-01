@@ -68,6 +68,7 @@ git push -u origin main
 ## 🔄 Sincronização com Repositórios Remotos
 
 * `git remote -v` — Verifica o repositório remoto configurado.
+* `git remote remove origin` — Remove o repositório remoto configurado.
 * `git remote add origin https://github.com/usuario/repositorio.git` — Define o repositório remoto.
 * `git push -u origin main` — Envia alterações para o remoto.
 * `git pull origin main` — Atualiza o repositório local.
